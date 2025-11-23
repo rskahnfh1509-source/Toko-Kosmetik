@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Promo Produk — Toko Contoh</title>
+  <meta name="description" content="Halaman promo produk modern, mudah diedit di VS Code" />
+  <style>
+    /* Reset ringan */
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --accent:#e54b8c; /* teal */
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.06);
+      --card:#fff5f8;
+      --bg:#2b0e1f;
+    }
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg,#071021 0%, #0b1220 100%);
+      color:#e6eef6;line-height:1.5;min-height:100vh;padding:36px;
+    }
+    .container{max-width:1100px;margin:0 auto}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#041014}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:34px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:14px;padding:28px}
+    .eyebrow{color:var(--accent);font-weight:700;margin-bottom:8px}
+    .hero h1{font-size:28px;margin-bottom:10px}
+    .hero p{color:var(--muted);margin-bottom:18px}
+    .cta{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#042022;text-decoration:none;font-weight:700}
+
+    .promo-badge{background:#ffecd1;color:#7f3700;padding:8px 12px;border-radius:999px;font-weight:700;display:inline-block;margin-bottom:12px}
+
+    /* Product card */
+    .product{background:linear-gradient(180deg,#08101a, rgba(255,255,255,0.02));border-radius:12px;padding:16px;display:flex;gap:14px;align-items:center}
+    .product img{width:120px;height:120px;object-fit:cover;border-radius:8px}
+    .product h3{margin-bottom:6px}
+    .price{font-weight:800;font-size:18px;color:var(--accent)}
+    .old{color:var(--muted);text-decoration:line-through;margin-left:10px;font-weight:600}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;color:var(--muted);font-weight:700;margin-left:auto}
+
+    /* Grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+
+    /* Features */
+    .features{display:flex;gap:18px;margin-top:22px}
+    .feature{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:10px;flex:1}
+    .feature h4{margin-bottom:8px}
+
+    footer{margin-top:34px;color:var(--muted);font-size:14px;text-align:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:620px){
+      .grid{grid-template-columns:1fr}
+      .logo{width:44px;height:44px}
+      body{padding:18px}
+      .product img{width:96px;height:96px}
+    }
+
+    /* small interactive styles */
+    .add{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--accent);cursor:pointer}
+    .count{font-weight:700;padding:0 8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">TP</div>
+        <div>
+          <div style="font-weight:700">Toko Kosmetik RS</div>
+          <div style="font-size:13px;color:var(--muted)">Kosmetik original & diskon spesial</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#produk">Produk</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <div class="promo-badge">FLASH SALE 24 JAM</div>
+        <div class="eyebrow">Diskon Spesial</div>
+        <h1>Kosmetik unggulan — cantik maksimal harga hemat</h1>
+        <p>Toko kosmetik kami menyediakan berbagai produk skincare dan makeup lengkap dari brand terpercaya yang 100% original, aman, dan terdaftar BPOM. Kami selalu update produk terbaru dengan harga terjangkau, cocok untuk semua jenis kulit dan usia. Belanja di sini lebih nyaman karena tersedia konsultasi, pelayanan ramah, pengiriman cepat, dan garansi produk asli atau uang kembali jika tidak sesuai.</p>
+        <a class="cta" href="#produk">Lihat Produk & Promo</a>
+
+        <div class="features">
+          <div class="feature">
+            <h4>Gratis Ongkir</h4>
+            <div style="color:var(--muted);font-size:14px">Untuk pembelian di atas Rp150.000</div>
+          </div>
+          <div class="feature">
+            <h4>Garansi 1 Tahun</h4>
+            <div style="color:var(--muted);font-size:14px">Layanan purna jual resmi</div>
+          </div>
+        </div>
+      </div>
+
+    <section id="kategori">
+      <h2 style="margin-bottom:12px">Kategori Produk</h2>
+      <div class="features">
+        <div class="feature"><h4>Make Up</h4><div style="color:var(--muted)">Foundation, lip matte, mascara, eye shadow, eye brow pencil, loose powder.</div></div>
+        <div class="feature"><h4>Skincare</h4><div style="color:var(--muted)">Cleansing gel, toner, serum, brightening care cream.</div></div>
+        <div class="feature"><h4>Body Care</h4><div style="color:var(--muted)">Body serum, body lotion, body cream, body scrub, shower scrub.</div></div>
+      </div>
+    </section>
+
+    <section id="produk">
+      <h2 style="margin-bottom:12px">Produk Pilihan</h2>
+      <div class="grid">
+        <!-- Product 1 -->
+        <div class="product">
+          <img src="img/Make Over.jpg" alt="Make Over"/>
+          <div>
+            <h3>Make Over</h3>
+            <div style="color:var(--muted);font-size:13px">Satu paket make up merk make over.</div>
+            <div style="margin-top:10px;display:flex;align-items:center">
+              <div class="price">Rp400.000</div>
+              <div class="old">Rp650.000</div>
+            </div>
+            <div style="margin-top:8px"><button class="add" onclick="addToCart('Produk A','89000')">Tambah</button></div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+          <img src="img/Skin1004.jpg" alt="Skin1004"/>
+          <div>
+            <h3>SKIN 1004</h3>
+            <div style="color:var(--muted);font-size:13px">Satu paket skincare merk skin1004</div>
+            <div style="margin-top:10px;display:flex;align-items:center">
+              <div class="price">Rp445.000</div>
+              <div class="old">Rp665.000</div>
+            </div>
+            <div style="margin-top:8px"><button class="add" onclick="addToCart('Produk B','139000')">Tambah</button></div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+          <img src="img/Scarlett.jpg" alt="Scarlett"/>
+          <div>
+            <h3>Scarlett Brightening Body Care</h3>
+            <div style="color:var(--muted);font-size:13px">Satu paket body care scarlett.</div>
+            <div style="margin-top:10px;display:flex;align-items:center">
+              <div class="price">Rp100.000</div>
+              <div class="old">Rp375.000</div>
+            </div>
+            <div style="margin-top:8px"><button class="add" onclick="addToCart('Produk C','59000')">Tambah</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fitur" style="margin-top:26px">
+      <h2 style="margin-bottom:12px">Kenapa Pilih Kami?</h2>
+        <div class="feature">
+          <h4>Terpercaya</h4>
+          <div style="color:var(--muted)">Produk 100% original dan terdaftar BPOM.</div>
+        </div>
+        <div class="feature">
+          <h4>Bayar Aman</h4>
+          <div style="color:var(--muted)">Metode pembayaran bisa dilakukan COD ataupun transfer.</div>
+        </div>
+        <div class="feature">
+          <h4>Customer Support</h4>
+          <div style="color:var(--muted)">Buka 08:00 - 20:00 setiap hari.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak" style="margin-top:26px">
+      <h2>Kontak & Checkout</h2>
+      <div style="display:flex;gap:14px;margin-top:8px;flex-wrap:wrap">
+        <input id="name" placeholder="Nama" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;min-width:220px" />
+        <input id="phone" placeholder="No. HP" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;min-width:220px" />
+        <button class="cta" onclick="checkout()">Checkout Sekarang</button>
+      </div>
+
+      <div style="margin-top:14px;color:var(--muted);font-size:14px">Total di keranjang: <span id="cart-total">Rp0</span></div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Toko Promo — Semua hak dilindungi
+    </footer>
+  </div>
+
+  <script>
+    // Simple cart demo (front-end only)
+    const cart = {items:[],total:0};
+    function formatRupiah(n){
+      return 'Rp' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+    function addToCart(name,price){
+      price = Number(price);
+      cart.items.push({name,price});
+      cart.total += price;
+      document.getElementById('cart-total').innerText = formatRupiah(cart.total);
+      alert(name + ' ditambahkan ke keranjang');
+    }
+    function checkout(){
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      if(!name || !phone){
+        alert('Isi nama dan nomor HP terlebih dahulu');
+        return;
+      }
+      if(cart.items.length===0){
+        alert('Keranjang kosong — tambahkan produk dulu');
+        return;
+      }
+      // Untuk demo kita hanya tunjukkan ringkasan
+      let pesan = `Terima kasih ${name}!\nPesanan: ${cart.items.map(i=>i.name).join(', ')}\nTotal: ${formatRupiah(cart.total)}\nKami akan menghubungi: ${phone}`;
+      alert(pesan);
+      // reset
+      cart.items=[];cart.total=0;document.getElementById('cart-total').innerText = formatRupiah(0);
+      document.getElementById('name').value='';document.getElementById('phone').value='';
+    }
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
